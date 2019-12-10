@@ -10,7 +10,7 @@ from .routes.setup import setup as routes_setup
 
 
 async def create_app() -> web.Application:
-    """Connect to database and create web application."""
+    """Create web application."""
     app = web.Application()
     setup_jinja2(app)
     routes_setup(app)
