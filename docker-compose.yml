@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+  web:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+      args:
+        LC_ALL: "C.UTF-8"
+        LANG: "C.UTF-8"
+    image: web_image
+    container_name: web_container
+    ports:
+      - 4000:4000
+      - 4001:4001
+    environment:
+      LC_ALL: "C.UTF-8"
+      LANG: "C.UTF-8"
+    working_dir: "/web"
+    entrypoint: ["/usr/local/bin/entrypoint.sh"]
+    command: [ "make", "run-dev" ]
+    volumes:
+      - ./volumes/virtualenv:/virtualenv
+      - ./volumes/web:/web
+    networks:
+      - backend
+
+networks:
+  backend:
