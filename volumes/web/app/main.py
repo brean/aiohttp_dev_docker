@@ -29,5 +29,5 @@ def setup_jinja2(app):
 if __name__ == '__main__':
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
-    app = loop.run_until_complete(create_app(True))
+    app = loop.run_until_complete(create_app())
     web.run_app(app)
