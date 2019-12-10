@@ -1,7 +1,7 @@
 # aiohttp-devtools + Docker
 Docker-Environment running [aiohttp-devtools](https://github.com/aio-libs/aiohttp-devtools) for easy development.
 
-Installs dependencies in a volume so they can easily be reinstalled without creating a new Container. The easiest way to do this is to just stop the container, delete the volume and restart it using docker-compose. While the container starts the virtualenv will be recreated.
+Installs dependencies in a volume so they can easily be reinstalled without creating a new container. The easiest way to do this is to just stop the container, delete the `volumes/virtualenv`-folder and restart the container. During the container startup the virtualenv will be recreated.
 
 # Build and run
 Start `docker-compose up` to build and run the docker container. Once its running you can access http://localhost:4000 in your web browser. It shows a simple welcome page reading 'Welcome User!'. You can make changes in the files in the `volumes/web/` folder and it will reload the page automatically.
